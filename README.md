@@ -149,6 +149,22 @@ if (NumberOfRecords > 100) {
 }
 ```
 
+**Do place a space after if, foreach, while, etc. and after commas.**
+
+``` c#
+// Correct
+if (Name != null)
+{
+    SaveCustomer(Name, Address, City, State);
+}
+
+// Incorrect
+if(Name != null)
+{
+    SaveCustomer(Name,Address,City,State);
+}
+```
+
 **Do use null coalescing rather than if statements to protect from null values.**
 
 ``` c#
