@@ -137,8 +137,14 @@ public int NumberOfRecords
 **Do vertically allign curly braces on separate lines.**
 
 ``` c#
+// Correct
 if (NumberOfRecords > 100)
 {
+    NumberOfRecords = 0;
+}
+
+// Incorrect
+if (NumberOfRecords > 100) {
     NumberOfRecords = 0;
 }
 ```
