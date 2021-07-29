@@ -90,6 +90,48 @@ Boolean isOpen;
 Int32 NumberOfRecords;
 ```
 
+**Do arrange large lists of variable declarations in alphabetical order.**
+
+``` c#
+public class Customer
+{
+    string Address;
+    int Age;
+    string City;
+    string ID;
+    string Name;
+    string State;
+    string ZipCode;
+}
+```
+
+**Do place backing variables next to their properties.**
+
+``` c#
+// Correct
+private string name;
+public string Name
+{
+}
+
+private int numberOfRecords;
+public int NumberOfRecords
+{
+}
+
+// Incorrect
+private string name;
+private int numberOfRecords;
+
+public string Name
+{
+}
+
+public int NumberOfRecords
+{
+}
+```
+
 ## Formatting
 
 **Do vertically allign curly braces on separate lines.**
@@ -98,5 +140,22 @@ Int32 NumberOfRecords;
 if (NumberOfRecords > 100)
 {
     NumberOfRecords = 0;
+}
+```
+
+**Do use null coalescing rather than if statements to protect from null values.**
+
+``` c#
+// Correct
+return customer?.Address?.City;
+
+// Incorrect
+if (customer != null && customer.Address != null)
+{
+    return customer.Address.City;
+}
+else
+{
+    return null;
 }
 ```
